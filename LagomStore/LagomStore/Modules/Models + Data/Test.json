@@ -1,0 +1,517 @@
+{
+    "headers": {
+        "topPicksHeaderModel": {
+            "firstLabelText": "Top Picks for You",
+            "subtitleLabel": "Recommended products",
+            "buttonTitle": "View All"
+        },
+        "thisWeekHeader": {
+            "firstLabelText": "This Week's Top Stories"
+        },
+        "titleHeaderModel": {
+            "title": "Only title",
+            "subtitleLabel": "",
+            "buttonTitle": "View All"
+        },
+        "listHeader": {
+            "labelText": "ListLabel",
+            "buttonTitle": "ListButton"
+        },
+        "productCategory1Header": {
+            "firstLabelText": "PCLabel",
+            "subtitleLabel": "LabelPC",
+            "buttonTitle": "Clear"
+        },
+        "productCategory2Header": {
+            "firstLabelText": "PC2Label",
+            "subtitleLabel": "PC2SecondLabel",
+            "buttonTitle": ""
+        }
+    },
+    "topPicks": [
+        {
+            "id": 1,
+            "count": 1,
+            "image": "TrolleyType1",
+            "description": "!",
+            "type": "Trolley",
+            "price": "$100",
+            "categories": [
+                {
+                    "image2": "TrolleyType1",
+                    "subCategories": [
+                        {
+                            "image3": "TrolleyType1",
+                            "currentSubCategory": "Current"
+                        },
+                        {
+                            "image3": "TrolleyType4",
+                            "currentSubCategory": "Current"
+                        },
+                        {
+                            "image3": "TrolleyType1",
+                            "currentSubCategory": "Current"
+                        },
+                        {
+                            "image3": "TrolleyType2",
+                            "currentSubCategory": "Current"
+                        }
+                    ]
+                },
+                {
+                    "image2": "CleaningEquipmentType1",
+                    "subCategories": [
+                        {
+                            "image3": "CleaningEquipmentType1",
+                            "currentSubCategory": "NewArrival"
+                        },
+                        {
+                            "image3": "CleaningEquipmentType3",
+                            "currentSubCategory": "NewArrival"
+                        },
+                        {
+                            "image3": "CleaningEquipmentType2",
+                            "currentSubCategory": "NewArrival"
+                        }
+                    ]
+                }
+            ],
+            "listCategories": [
+                {
+                    "image": "TrolleyType1"        },
+                {
+                    "image": "TrolleyType3"
+                },
+                {
+                    "image": "TrolleyType3"
+                },
+                {
+                    "image": "TrolleyType4"
+                }
+            ],
+            "categoryName": "CleaningEquipment",
+            "detailButtonsName": {
+                "firstButtonTitle": "Add to Bag",
+                "seconrButtonTitle": "Favorite"
+            },
+            "pagecontrolModel": [
+                {
+                    "image": "TrolleyType3",
+                    "title": "Special Offer",
+                    "description": "Get 20% off"
+                },
+                {
+                    "image": "TrolleyType4",
+                    "title": "Summer Sale",
+                    "description": "Save big on new arrivals"
+                },
+                {
+                    "image": "TrolleyType1",
+                    "title": "Summer Sale",
+                    "description": "Save big on new arrivals"
+                }
+            ],
+            "youMightAlsoLike": [
+                {
+                    "image": "ThankYou",
+                },
+                {
+                    "image": "ThankYou",
+                },
+                {
+                    "image": "ThankYou",
+                },
+                {
+                    "image": "ThankYou",
+                }
+            ],
+        },
+        {
+            "id": 2,
+            "count": 1,
+            "image": "CleaningEquipmentType2",
+            "description": "Cleaning",
+            "type": "Equipment",
+            "price": "$200",
+            "categories": [
+                {
+                    "image2": "CleaningEquipmentType2",
+                    "subCategories": [
+                        {
+                            "image3": "CleaningEquipmentType2",
+                            "currentSubCategory": "NewArrival"
+                        },
+                        {
+                            "image3": "CleaningEquipmentType2",
+                            "currentSubCategory": "NewArrival"
+                        },
+                        {
+                            "image3": "CleaningEquipmentType3",
+                            "currentSubCategory": "NewArrival"
+                        }
+                    ]
+                },
+                {
+                    "image2": "CleaningEquipmentType1",
+                    "subCategories": [
+                        {
+                            "image3": "CleaningEquipmentType1",
+                            "currentSubCategory": "NewCollection"
+                        },
+                        {
+                            "image3": "CleaningEquipmentType3",
+                            "currentSubCategory": "NewCollection"
+                        },
+                        {
+                            "image3": "CleaningEquipmentType1",
+                            "currentSubCategory": "NewCollection"
+                        }
+                    ]
+                }
+            ],
+            "listCategories": [
+                {
+                    "image": "TrolleyType1"        },
+                {
+                    "image": "TrolleyType3"
+                },
+                {
+                    "image": "TrolleyType3"
+                },
+                {
+                    "image": "TrolleyType4"
+                }
+            ],
+            "categoryName": "Shoes",
+            "detailButtonsName": {
+                "firstButtonTitle": "Add to Bag",
+                "seconrButtonTitle": "Favorite"
+            },
+            "pagecontrolModel": [
+                {
+                    "image": "CleaningEquipmentType2",
+                    "title": "Special Offer",
+                    "description": "Get 20% off"
+                },
+                {
+                    "image": "CleaningEquipmentType3",
+                    "title": "Summer Sale",
+                    "description": "Save big on new arrivals"
+                }
+            ],
+            "youMightAlsoLike": [
+                {
+                    "image": "ThankYou",
+                },
+                {
+                    "image": "ThankYou",
+                },
+                {
+                    "image": "ThankYou",
+                },
+                {
+                    "image": "ThankYou",
+                }
+            ],
+        },
+        {
+            "id": 3,
+            "count": 1,
+            "image": "CleaningEquipmentType3",
+            "description": "Cleaning",
+            "type": "Equipment",
+            "price": "$300",
+            "categories": [
+                {
+                    "image2": "CleaningEquipmentType3",
+                    "subCategories": [
+                        {
+                            "image3": "CleaningEquipmentType3",
+                            "currentSubCategory": "NewCollection"
+                        },
+                        {
+                            "image3": "CleaningEquipmentType3",
+                            "currentSubCategory": "NewCollection"
+                        }
+                    ]
+                },
+                {
+                    "image2": "CleaningEquipmentType1",
+                    "subCategories": [
+                        {
+                            "image3": "CleaningEquipmentType2",
+                            "currentSubCategory": "Current"
+                        },
+                        {
+                            "image3": "CleaningEquipmentType3",
+                            "currentSubCategory": "Current"
+                        }
+                    ]
+                }
+            ],
+            "listCategories": [
+                {
+                    "image": "TrolleyType1"
+                },
+                {
+                    "image": "TrolleyType3"
+                },
+                {
+                    "image": "TrolleyType3"
+                },
+                {
+                    "image": "TrolleyType4"
+                }
+            ],
+            "categoryName": "S",
+            "detailButtonsName": {
+                "firstButtonTitle": "Add to Bag",
+                "seconrButtonTitle": "Favorite"
+            },
+            "pagecontrolModel": [
+                {
+                    "image": "CleaningEquipmentType2",
+                    "title": "Special Offer",
+                    "description": "Get 20% off"
+                },
+                {
+                    "image": "CleaningEquipmentType3",
+                    "title": "Summer Sale",
+                    "description": "Save big on new arrivals"
+                }
+            ],
+            "youMightAlsoLike": [
+                {
+                    "image": "ThankYou",
+                },
+                {
+                    "image": "ThankYou",
+                },
+                {
+                    "image": "ThankYou",
+                },
+                {
+                    "image": "ThankYou",
+                }
+            ],
+        }
+    ],
+    "pageControl": [
+        {
+            "image": "CleaningEquipmentType1",
+            "title": "Get Ready to Win",
+            "description": "Use code WINNING for an extra 25% off select styles"
+        },
+        {
+            "image": "CleaningEquipmentType2",
+            "title": "Nike Experts",
+            "description": "Chat live with sports & style Experts"
+        }
+    ],
+    "youMightAlsoLike": [
+        {
+            "image": "ThankYou",
+        },
+        {
+            "image": "ThankYou",
+        },
+        {
+            "image": "ThankYou",
+        },
+        {
+            "image": "ThankYou",
+        }
+    ],
+    "listHeader": {
+        "labelText": "ListLabel",
+        "buttonTitle": "ListButton"
+    },
+    "listModel": [
+        {
+            "image": "TrolleyType1"        },
+        {
+            "videoURL": "12335026-uhd_2560_1440_48fps"
+        },
+        {
+            "image": "ThankYou"
+        },
+        {
+            "image": "TrolleyType4"
+        }
+    ],
+    "productCategory1Header": {
+        "firstLabelText": "PCLabel",
+        "subtitleLabel": "LabelPC",
+        "buttonTitle": "Clear"
+    },
+    "productCategory1": {
+        "firstCollection": [
+            {
+                "id": 9,
+                "count": 1,
+                "image": "CleaningEquipmentType1",
+                "description": "1",
+                "type": "2",
+                "price": "3",
+                "category": "Running"
+            }
+        ],
+        "secondCollection": [
+            {
+                "id": 10,
+                "count": 1,
+                "image": "CleaningEquipmentType2",
+                "description": "Best Selling Shoes",
+                "type": "Lifestyle",
+                "price": "$150",
+                "category": "Lifestyle"
+            }
+        ]
+    },
+    "alwaysPopular": [
+        {
+            "largeImage": "CleaningEquipmentType3",
+            "smallImage1": "CleaningEquipmentType2",
+            "smallImage2": "CleaningEquipmentType1",
+            "title": "Popular Picks",
+            "rightButtonTitle": "View All",
+            "bottomButtonTitle": "Shop Now",
+            "largeImageLabel1": "Air Max",
+            "largeImageLabel2": "Exclusive",
+            "smallImage1Label1": "Running Shoes",
+            "smallImage1Label2": "Fast Comfort",
+            "smallImage2Label1": "Zoom Series",
+            "smallImage2Label2": "Top Speed"
+        }
+    ],
+    "productCategory2Header": {
+        "firstLabelText": "PC2Label",
+        "subtitleLabel": "PC2SecondLabel",
+        "buttonTitle": ""
+    },
+    "productCategory2": [
+        {
+            "id": 4,
+            "count": 1,
+            "image": "CleaningEquipmentType3",
+            "description": "Cool shoes",
+            "type": "Life style",
+            "price": "$107",
+            "category": "Casual"
+        },
+        {
+            "id": 5,
+            "count": 1,
+            "image": "CleaningEquipmentType2",
+            "description": "Cool shoes",
+            "type": "Life style",
+            "price": "$107",
+            "category": "Casual"
+        },
+        {
+            "id": 6,
+            "count": 1,
+            "image": "CleaningEquipmentType1",
+            "description": "Cool shoes",
+            "type": "Life style",
+            "price": "$107",
+            "category": "Casual"
+        }
+    ],
+    "thankYou": [
+        {
+            "image": "ThankYou",
+        },
+        {
+            "image": "ThankYou",
+        },
+        {
+            "image": "ThankYou",
+        },
+        {
+            "image": "ThankYou",
+        }
+    ],
+    "shoes": [
+        {
+            "image2": "CleaningEquipmentType2",
+            "subCategories": [
+                {
+                    "image3": "CleaningEquipmentType1",
+                    "currentSubCategory": "Gratitude Collection"
+                }
+            ]
+        },
+        {
+            "image2": "CleaningEquipmentType3",
+            "subCategories": [
+                {
+                    "image3": "CleaningEquipmentType2",
+                    "currentSubCategory": "Gratitude Collection"
+                }
+            ]
+        },
+        {
+            "image2": "CleaningEquipmentType1",
+            "subCategories": [
+                {
+                    "image3": "CleaningEquipmentType3",
+                    "currentSubCategory": "Gratitude Collection"
+                }
+            ]
+        },
+        {
+            "image2": "CleaningEquipmentType2",
+            "subCategories": [
+                {
+                    "image3": "CleaningEquipmentType1",
+                    "currentSubCategory": "Gratitude Collection"
+                }
+            ]
+        },
+        {
+            "image2": "CleaningEquipmentType1",
+            "subCategories": [
+                {
+                    "image3": "CleaningEquipmentType1",
+                    "currentSubCategory": "Gratitude Collection"
+                }
+            ]
+        }
+    ],
+    "detailButtonsName": {
+        "firstButtonTitle": "First",
+        "seconrButtonTitle": "Second"
+    },
+    "shopButtons": {
+        "firstButtonTitle": "Men",
+        "seconrButtonTitle": "Women",
+        "thirdButtonTitle": "Kids"
+    },
+    "youMightAlsoLike": [
+        {
+            "image": "ThankYou",
+        },
+        {
+            "image": "ThankYou",
+        },
+        {
+            "image": "ThankYou",
+        },
+        {
+            "image": "ThankYou",
+        }
+    ],
+    "promotionModel": [
+        {
+            "label": "Use promocode"
+        }
+    ]
+}
+
+
+
+
+
+
+
