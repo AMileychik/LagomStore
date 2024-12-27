@@ -111,8 +111,9 @@ extension ButtonsCell {
     
     func setupView() {
         contentView.addSubview(buttonStackView)
-        contentView.addSubview(selectedUnderlineView)
+        
         contentView.addSubview(fullWidthUnderlineView)
+        contentView.addSubview(selectedUnderlineView)
     }
     
     func setupConstraints() {
@@ -125,6 +126,11 @@ extension ButtonsCell {
         underlineWidthConstraint?.isActive = true
         underlineCenterXConstraint?.isActive = true
         
+        
+//        var heightConstraint = selectedUnderlineView.heightAnchor.constraint(equalToConstant: 2)
+//        heightConstraint.priority = .defaultHigh
+//        heightConstraint.isActive = true
+        
         NSLayoutConstraint.activate([
             
             buttonStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
@@ -135,8 +141,12 @@ extension ButtonsCell {
             fullWidthUnderlineView.topAnchor.constraint(equalTo: buttonStackView.bottomAnchor, constant: 8),
             fullWidthUnderlineView.heightAnchor.constraint(equalToConstant: 1),
             
-            selectedUnderlineView.heightAnchor.constraint(equalToConstant: 1),
-            selectedUnderlineView.topAnchor.constraint(equalTo: fullWidthUnderlineView.bottomAnchor, constant: 0)
+//            selectedUnderlineView.heightAnchor.constraint(equalToConstant: 3),
+            selectedUnderlineView.topAnchor.constraint(equalTo: fullWidthUnderlineView.topAnchor, constant: 0)
         ])
+        
+        let heightConstraint = selectedUnderlineView.heightAnchor.constraint(equalToConstant: 2)
+        heightConstraint.priority = .defaultHigh
+        heightConstraint.isActive = true
     }
 }
