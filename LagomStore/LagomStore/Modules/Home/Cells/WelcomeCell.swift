@@ -34,16 +34,20 @@ extension WelcomeCell {
     
     func setupViews() {
         contentView.addSubview(welcomeLabel)
+        
+//        contentView.layer.borderColor = UIColor.blue.cgColor
+//        contentView.layer.borderWidth = 1
+//        contentView.clipsToBounds = true
+//        contentView.layer.cornerRadius = 4
     }
     
     func setupConstraints() {
-        welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            welcomeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            welcomeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             welcomeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             welcomeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
-            welcomeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -32)
+            welcomeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
     }
 }

@@ -20,6 +20,17 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+// MARK: - Public
+extension CategoriesCollectionViewCell {
+    func updateCategories(_ model: Categories) {
+        categoriesImageView.image = UIImage(named: model.image2)
+    }
+}
+
+// MARK: - Layout
+extension CategoriesCollectionViewCell {
     
     func setupViews() {
         contentView.addSubview(categoriesImageView)
@@ -39,9 +50,5 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
             categoriesImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             categoriesImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-    }
-    
-    func updateCategories(_ model: Categories) {
-        categoriesImageView.image = UIImage(named: model.image2)
     }
 }

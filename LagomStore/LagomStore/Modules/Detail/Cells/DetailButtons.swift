@@ -7,19 +7,16 @@
 
 import UIKit
 
-
 class DetailButtons: UITableViewCell {
+    
+    var currentModel: TopPickModel?
+    var orderService2: OrdersServiceProtocol = OrdersService()
     
     var addToBagButton = UIButton()
     var favoriteButton = UIButton()
     
     var onAddToBagButton: (() -> Void)?
     var onFavoriteButton: (() -> Void)?
-    
-    var currentModel: TopPickModel?
-    
-    var orderService2: OrdersServiceProtocol = OrdersService()
-
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -43,7 +40,25 @@ class DetailButtons: UITableViewCell {
         onFavoriteButton?()
         print("Post")
     }
+    
+    //    override func prepareForReuse() {
+    //        super.prepareForReuse()
+    //        onAddToBagButton = nil
+    //        onFavoriteButton = nil
+    //    }
+}
 
+// MARK: - Public
+extension DetailButtons {
+    func update(_ model: DetailButtonsModel, topPickModel: TopPickModel) {
+        addToBagButton.setTitle(model.firstButtonTitle, for: .normal)
+        favoriteButton.setTitle(model.seconrButtonTitle, for: .normal)
+        currentModel = topPickModel
+    }
+}
+
+//MARK: - Layout
+extension DetailButtons {
     
     private func setupViews() {
         [addToBagButton, favoriteButton].forEach {
@@ -64,19 +79,15 @@ class DetailButtons: UITableViewCell {
             favoriteButton.topAnchor.constraint(equalTo: addToBagButton.bottomAnchor, constant: 16),
             favoriteButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             favoriteButton.heightAnchor.constraint(equalToConstant: 50),
-            favoriteButton.widthAnchor.constraint(equalToConstant: 325),
+            favoriteButton.widthAnchor.constraint(equalToConstant: 325)
         ])
     }
-    
-    func update(_ model: DetailButtonsModel, topPickModel: TopPickModel) {
-        addToBagButton.setTitle(model.firstButtonTitle, for: .normal)
-        favoriteButton.setTitle(model.seconrButtonTitle, for: .normal)
-        currentModel = topPickModel
-    }
-    
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        onAddToBagButton = nil
-//        onFavoriteButton = nil
-//    }
 }
+
+
+    
+
+ 
+    
+
+

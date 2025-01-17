@@ -13,7 +13,7 @@ class HomeListCell: UITableViewCell {
     var rowHeights: [CGFloat] = []
     var gradienrIndexes: [Int] = []
     
-    private let titleLabel = Label(type: .banner)
+    private let titleLabel = Label(type: .name)
     private let headerStackView = StackView(type: .listHeader)
     
     private var tableViewHeightConstraint: NSLayoutConstraint?
@@ -30,7 +30,7 @@ class HomeListCell: UITableViewCell {
     
     private lazy var actionButton: UIButton = {
         let button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }()
@@ -96,7 +96,7 @@ extension HomeListCell: UITableViewDataSource {
         if let videoURLString = data.videoURL, let videoURL = Bundle.main.url(forResource: videoURLString, withExtension: "mp4") {
             
             let cell = tableView.dequeuCell(indexPath) as VideoCell
-            cell.update(videoURL, addGradient: false)
+            cell.update(videoURL, addGradient: true, isMuted: true)
             cell.playVideo()
             return cell
             
@@ -129,23 +129,32 @@ extension HomeListCell {
         
         headerStackView.addArrangedSubview(titleLabel)
         headerStackView.addArrangedSubview(actionButton)
+        
+//        contentView.layer.borderColor = UIColor.blue.cgColor
+//        contentView.layer.borderWidth = 1
+//        contentView.clipsToBounds = true
+//        contentView.layer.cornerRadius = 4
     }
     
     func setupConstraints() {
+        
         tableViewHeightConstraint = tableView.heightAnchor.constraint(equalToConstant: 0)
         tableViewHeightConstraint?.isActive = true
         
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            headerStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            headerStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            headerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            
+            headerStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24),
+            headerStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            headerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             
             actionButton.heightAnchor.constraint(equalToConstant: 30),
             
             tableView.topAnchor.constraint(equalTo: headerStackView.bottomAnchor, constant: 8),
             tableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])
     }
 }

@@ -1,7 +1,7 @@
 import UIKit
 
 class ExpandableCell: UITableViewCell {
-
+    
     var expandButtonTapped: (() -> Void)?
     
     private var isExpanded: Bool = false {
@@ -49,19 +49,43 @@ class ExpandableCell: UITableViewCell {
         return label
     }()
     
+    private func updateCellState() {
+        contentViewContainer.isHidden = !isExpanded
+        expandButton.setTitle(isExpanded ? "ʌ" : "v", for: .normal)
+    }
+    
     @objc private func toggleExpand() {
         isExpanded.toggle()
         expandButtonTapped?()
     }
     
-    func configure(with title: String, buttonTitle: String, additionalLabel: String? = nil, isExpanded: Bool) {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        // Сброс состояния ячейки
+        isExpanded = false
+        
+        // Очистка текстов меток
+        titleLabel.text = nil
+        contentLabel.text = nil
+        additionalLabel.text = nil
+    }
+}
+
+// MARK: - Public
+extension ExpandableCell {
+    func update(with title: String, buttonTitle: String, additionalLabel: String? = nil, isExpanded: Bool) {
         titleLabel.text = title
         contentLabel.text = buttonTitle
         self.additionalLabel.text = additionalLabel
         self.isExpanded = isExpanded
         setupViews()
+        setupConstraints()
     }
-    
+}
+ 
+//MARK: - Layout
+extension ExpandableCell {
     
     private func setupViews() {
         contentView.addSubview(titleLabel)
@@ -69,8 +93,12 @@ class ExpandableCell: UITableViewCell {
         contentView.addSubview(contentViewContainer) // Добавляем контейнер для содержимого
         contentViewContainer.addSubview(contentLabel)
         contentViewContainer.addSubview(additionalLabel)
+    }
+    
+   private func setupConstraints() {
         
         NSLayoutConstraint.activate([
+            
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             
@@ -87,26 +115,7 @@ class ExpandableCell: UITableViewCell {
             
             additionalLabel.leadingAnchor.constraint(equalTo: contentViewContainer.leadingAnchor),
             additionalLabel.topAnchor.constraint(equalTo: contentLabel.bottomAnchor, constant: 8),
-            additionalLabel.trailingAnchor.constraint(equalTo: contentViewContainer.trailingAnchor),
-            
+            additionalLabel.trailingAnchor.constraint(equalTo: contentViewContainer.trailingAnchor)
         ])
     }
-    
-    private func updateCellState() {
-        contentViewContainer.isHidden = !isExpanded
-        expandButton.setTitle(isExpanded ? "ʌ" : "v", for: .normal)
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        // Сброс состояния ячейки
-        isExpanded = false
-        
-        // Очистка текстов меток
-        titleLabel.text = nil
-        contentLabel.text = nil
-        additionalLabel.text = nil
-    }
-
 }

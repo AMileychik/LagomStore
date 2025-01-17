@@ -12,7 +12,6 @@ class NearbyStoresCollectionViewCell: UICollectionViewCell {
     private let photoImageView = ImageView(type: .nearbySection)
     private let nameLabel = Label(type: .description)
     private let descriptionLabel = Label(type: .description)
-    
     private let horizontalStackView = StackView(type: .productCell)
     
     override init(frame: CGRect) {
@@ -46,9 +45,7 @@ extension NearbyStoresCollectionViewCell {
     }
     
     func setupConstraints() {
-        photoImageView.translatesAutoresizingMaskIntoConstraints = false
-        horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
-
+    
         NSLayoutConstraint.activate([
             
             photoImageView.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor),

@@ -44,9 +44,6 @@ extension NewAndFeaturedCellCollectionViewCell {
     }
     
     func setupConstraints() {
-        photoImageView.translatesAutoresizingMaskIntoConstraints = false
-        horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([
             
             photoImageView.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor),
@@ -54,7 +51,7 @@ extension NewAndFeaturedCellCollectionViewCell {
             
             horizontalStackView.topAnchor.constraint(equalTo: photoImageView.bottomAnchor),
             horizontalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            horizontalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            horizontalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
 }

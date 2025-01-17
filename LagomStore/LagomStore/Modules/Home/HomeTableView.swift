@@ -30,6 +30,7 @@ class HomeTableView: UITableView {
         allowsSelection = false
         
         registerCell(WelcomeCell.self)
+        registerCell(TopPicksContainerCell.self)
         registerCell(OrthogonalContainerCell.self)
         registerCell(PageControlCell.self)
         registerCell(HomeListCell.self)
@@ -48,7 +49,7 @@ extension HomeTableView: UITableViewDataSource {
         case list([ListModel], header: ListHeaderModel)
         case productCategory1([TopPickModel], header: UniversalHeaderModel)
         case alwaysPopular([AlwaysPopularModel])
-        case productCategory2([PageControlModel], header: UniversalHeaderModel)
+        case productCategory2([TopPickModel], header: UniversalHeaderModel)
         case thankYou([ThankYouModel])
     }
     
@@ -70,32 +71,35 @@ extension HomeTableView: UITableViewDataSource {
             return cell
             
         case .topPicks(let model, let header):
-            let cell = tableView.dequeuCell(indexPath) as OrthogonalContainerCell
-            let sectionHeight: CGFloat = 300
-            cell.update(dataType: .thisWeekTopStories(model), height: sectionHeight)
-            cell.update(header)
-            cell.delegate = self
+//            let cell = tableView.dequeuCell(indexPath) as OrthogonalContainerCell
+//            cell.update(dataType: .topPicks(model), sectionHeight: 300)
+//            cell.update(header)
+//            cell.delegate = self
+//            return cell
+            
+            let cell = tableView.dequeuCell(indexPath) as TopPicksContainerCell
+            cell.updateHeader(header)
+            cell.update(model)
+            cell.delegete = self
             return cell
             
         case .pageControl(let model):
             let cell = tableView.dequeuCell(indexPath) as PageControlCell
-            let sectionHeight: CGFloat = 150
-            cell.update(model, height: sectionHeight)
+            cell.update(model, sectionHeight: 150)
             cell.isAutoScrollingEnabled = false
             return cell
             
         case .list(let model, let header):
             let cell = tableView.dequeuCell(indexPath) as HomeListCell
-            cell.update(model, heights: [400, 400, 400, 200], gradientIndexes: [3])
             cell.update(header)
+            cell.update(model, heights: [500, 500, 500, 250], gradientIndexes: [3])
             return cell
             
         case .productCategory1(let model, let header):
-            let cell = tableView.dequeuCell(indexPath) as OrthogonalContainerCell
-            let sectionHeight: CGFloat = 400
-            cell.update(dataType: .topPicks(model), height: sectionHeight)
-            cell.update(header)
-            cell.delegate = self
+            let cell = tableView.dequeuCell(indexPath) as TopPicksContainerCell
+            cell.updateHeader(header)
+            cell.update(model)
+            cell.delegete = self
             return cell
             
         case .alwaysPopular(let model):
@@ -105,11 +109,10 @@ extension HomeTableView: UITableViewDataSource {
             return cell
             
         case .productCategory2(let model, let header):
-            let cell = tableView.dequeuCell(indexPath) as OrthogonalContainerCell
-            let sectionHeight: CGFloat = 250
-            cell.update(dataType: .productCategory2(model), height: sectionHeight)
-            cell.update(header)
-            cell.delegate = self
+            let cell = tableView.dequeuCell(indexPath) as TopPicksContainerCell
+            cell.updateHeader(header)
+            cell.update(model)
+            cell.delegete = self
             return cell
             
         case .thankYou(let model):
@@ -125,18 +128,29 @@ extension HomeTableView: UITableViewDataSource {
 extension HomeTableView: UITableViewDelegate {}
 
 //MARK: - OrthogonalContainerCellDelegate
-extension HomeTableView: OrthogonalContainerCellDelegate {
+
+extension HomeTableView: TopPicksContainerCellDelegate {
     
-    func didSelectItem(with model: [TopPickModel], category: String) {
+    func didSelectItem(_ model: [TopPickModel], category: String) {
         let detailVC = di.screenFactory.makeDetailScreen()
         detailVC.updateWithCategory(model, category: category)
         viewcontroller?.navigationController?.pushViewController(detailVC, animated: true)
- //       print("\(category)")
-    }
-    
-    func didSelectItem2(with model: [PageControlModel]) {
-        let detailVC = di.screenFactory.makeDetailScreen()
-        detailVC.updateWithCategory2(model)
-        viewcontroller?.navigationController?.pushViewController(detailVC, animated: true)
+        print(category)
     }
 }
+
+//extension HomeTableView: OrthogonalContainerCellDelegate {
+//    
+//    func didSelectItem(with model: [TopPickModel], category: String) {
+//        let detailVC = di.screenFactory.makeDetailScreen()
+//        detailVC.updateWithCategory(model, category: category)
+//        viewcontroller?.navigationController?.pushViewController(detailVC, animated: true)
+// //       print("\(category)")
+//    }
+//    
+//    func didSelectItem2(with model: [PageControlModel]) {
+//        let detailVC = di.screenFactory.makeDetailScreen()
+//        detailVC.updateWithCategory2(model)
+//        viewcontroller?.navigationController?.pushViewController(detailVC, animated: true)
+//    }
+//}

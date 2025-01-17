@@ -42,7 +42,7 @@ final class HomeVC: UIViewController {
                                           style: .plain,
                                           target: self,
                                           action: #selector(rightButtonTapped))
- //       rightButton.tintColor = .black
+        rightButton.tintColor = .black
         navigationItem.rightBarButtonItem = rightButton
     }
     
@@ -73,7 +73,7 @@ extension HomeVC {
             .list(products.listModel, header: products.headers.listHeader),
             .productCategory1(products.topPicks, header: products.headers.topPicksHeaderModel),
             .alwaysPopular(products.alwaysPopular),
-            .productCategory2(products.pageControl, header: products.headers.topPicksHeaderModel),
+            .productCategory2(products.topPicks, header: products.headers.topPicksHeaderModel),
             .thankYou(products.thankYou)
         ]
             self.tableView.reloadData()
@@ -106,6 +106,7 @@ private extension HomeVC {
     }
     
     func setupConstraints() {
+        
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),

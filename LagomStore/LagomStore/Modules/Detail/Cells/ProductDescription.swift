@@ -9,7 +9,6 @@ import UIKit
 
 class ProductDescription: UITableViewCell {
     
-    // MARK: - UI элементы
     private let customLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +34,6 @@ class ProductDescription: UITableViewCell {
         return button
     }()
     
-    
     private let underlineView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -43,71 +41,55 @@ class ProductDescription: UITableViewCell {
         return view
     }()
     
-    // MARK: - Инициализация
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) не был реализован")
     }
-    
-    // MARK: - Настройка UI
-//    private func setupViews() {
-//        contentView.addSubview(customLabel)
-//        contentView.addSubview(customButton)
-//        contentView.addSubview(underlineView) // Добавляем подчеркивание
-//        
-//        NSLayoutConstraint.activate([
-//            // Constraints для label
-//            customLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-//            customLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-//            customLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-//            
-//            // Constraints для кнопки
-//            customButton.topAnchor.constraint(equalTo: customLabel.bottomAnchor, constant: 16),
-//            customButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-//            
-//            // Подчеркивание (underlineView)
-//            underlineView.topAnchor.constraint(equalTo: customButton.bottomAnchor, constant: 2), // Отступ 2
-//            underlineView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-//            underlineView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-//            underlineView.heightAnchor.constraint(equalToConstant: 1), // Толщина линии
-//            
-//            // Нижний отступ contentView
-//            underlineView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
-//        ])
-//    }
+}
+
+// MARK: - Public
+extension ProductDescription {
+    func update(withText text: String, buttonTitle: String) {
+        customLabel.text = text
+        customButton.setTitle(buttonTitle, for: .normal)
+    }
+}
+
+//MARK: - Layout
+extension ProductDescription {
     
     private func setupViews() {
         contentView.addSubview(customLabel)
         contentView.addSubview(customButton)
         contentView.addSubview(underlineView) // Добавляем линию
-
+    }
+    
+    private func setupConstraints() {
+        
         NSLayoutConstraint.activate([
             // Constraints для label
             customLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             customLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             customLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-
+            
             // Constraints для кнопки
             customButton.topAnchor.constraint(equalTo: customLabel.bottomAnchor, constant: 16),
             customButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-
+            
             // Constraints для underlineView (линии)
             underlineView.topAnchor.constraint(equalTo: customButton.bottomAnchor, constant: 4), // Отступ от текста
             underlineView.leadingAnchor.constraint(equalTo: customButton.leadingAnchor),
             underlineView.trailingAnchor.constraint(equalTo: customButton.trailingAnchor),
             underlineView.heightAnchor.constraint(equalToConstant: 1), // Толщина линии
-
+            
             // Нижний отступ contentView
             underlineView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
-    }
-    
-    func configure(withText text: String, buttonTitle: String) {
-        customLabel.text = text
-        customButton.setTitle(buttonTitle, for: .normal)
     }
 }

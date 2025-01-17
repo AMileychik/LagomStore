@@ -22,11 +22,11 @@ class GradientView: UIView {
     private func setupGradient() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
-            UIColor.white.withAlphaComponent(1.0).cgColor,
+            UIColor.white.withAlphaComponent(0.8).cgColor,
             UIColor.white.withAlphaComponent(0.0).cgColor
         ]
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0) // Снизу
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.5)   // До середины
+        gradientLayer.endPoint = CGPoint(x: 0.4, y: 0.4)   // До середины
         gradientLayer.frame = bounds
         layer.addSublayer(gradientLayer)
     }

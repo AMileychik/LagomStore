@@ -45,7 +45,7 @@ extension ThankYouCell {
             photo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             photo.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             photo.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 300)
+            contentView.heightAnchor.constraint(equalToConstant: 250)
         ])
     }
 }

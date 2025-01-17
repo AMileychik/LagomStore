@@ -13,29 +13,37 @@ class DetailVCPageControlCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupPageControlViews()
+        setupViews()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+// MARK: - Public
+extension DetailVCPageControlCollectionViewCell {
+    func updatePageControl(_ model: SubCategoryModel) {
+        pageControlImageView.image = UIImage(named: model.image3)
+    }
+}
+
+// MARK: - Layout
+extension DetailVCPageControlCollectionViewCell {
     
-    private func setupPageControlViews() {
-        
+    private func setupViews() {
         contentView.addSubview(pageControlImageView)
-        
-        pageControlImageView.translatesAutoresizingMaskIntoConstraints = false
-        
+    }
+    
+    private func setupConstraints() {
+
         NSLayoutConstraint.activate([
             pageControlImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             pageControlImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             pageControlImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             pageControlImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-    }
-    
-    func updatePageControl(_ model: SubCategoryModel) {
-        pageControlImageView.image = UIImage(named: model.image3)
     }
 }
 

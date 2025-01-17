@@ -52,9 +52,6 @@ extension RecentlyViewedCollectionViewCell {
     }
     
     func setupConstraints() {
-        photoImageView.translatesAutoresizingMaskIntoConstraints = false
-        horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             
             photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor),

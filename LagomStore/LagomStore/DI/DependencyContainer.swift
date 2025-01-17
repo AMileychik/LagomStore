@@ -34,15 +34,15 @@ final class ScreenFactory {
     }
     
     func makeShopScreen() -> ShopVC {
-        return ShopVC(loader: di.loader)
+        return ShopVC(shopLoader: di.loader)
     }
     
     func makeFavoriteScreen() -> FavoritesVC {
-        return FavoritesVC(loader: di.loader)
+        return FavoritesVC(favoritesLoader: di.loader)
     }
     
     func makeBagVC() -> BagVC {
-        return BagVC(loader: di.loader)
+        return BagVC(bagLoader: di.loader)
     }
     
     func makeDetailScreen() -> DetailVC {

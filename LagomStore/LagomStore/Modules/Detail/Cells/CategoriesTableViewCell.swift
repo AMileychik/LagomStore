@@ -18,9 +18,7 @@ class CategoriesTableViewCell: UITableViewCell {
     private var categories: [Categories] = []
     private var subCategory: [SubCategoryModel] = []
     
-//    weak var viewcontroller: UIViewController?
-    
-    private lazy var categoriesCollectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         
@@ -29,7 +27,6 @@ class CategoriesTableViewCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.registerCell(CategoriesCollectionViewCell.self)
-        
         return collectionView
     }()
     
@@ -43,43 +40,47 @@ class CategoriesTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupViews() {
-        contentView.addSubview(categoriesCollectionView)
-    }
-    
-    func setupConstraints() {
-        categoriesCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            categoriesCollectionView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            categoriesCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            categoriesCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            categoriesCollectionView.heightAnchor.constraint(equalToConstant: 125),
-        ])
-    }
-    
+    //    override func prepareForReuse() {
+    //        super.prepareForReuse()
+    //
+    //        // Сброс данных
+    //        categories = []
+    //        subCategory = []
+    //
+    //        // Перезагрузка коллекции
+    //        categoriesCollectionView.reloadData()
+    //
+    //        // Сброс делегата, если требуется
+    //        delegate = nil
+    //    }
+}
+
+// MARK: - Public
+extension CategoriesTableViewCell {
     func updateCategories(_ model: [Categories]) {
         self.categories = model
         self.subCategory = model.first?.subCategories ?? []
-        //        self.subCategory = model[0].subCategories
-        categoriesCollectionView.reloadData()
+//        self.subCategory = model[0].subCategories
+        collectionView.reloadData()
     }
-    
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        
-//        // Сброс данных
-//        categories = []
-//        subCategory = []
-//        
-//        // Перезагрузка коллекции
-//        categoriesCollectionView.reloadData()
-//        
-//        // Сброс делегата, если требуется
-//        delegate = nil
-//    }
 }
 
+// MARK: - CollectionViewDataSource
+extension CategoriesTableViewCell: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categories.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeuCell(indexPath) as CategoriesCollectionViewCell
+        let data = categories[indexPath.item]
+        cell.updateCategories(data)
+        return cell
+    }
+}
+
+// MARK: - CollectionViewDelegate
 extension CategoriesTableViewCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -90,22 +91,7 @@ extension CategoriesTableViewCell: UICollectionViewDelegate {
     }
 }
 
-extension CategoriesTableViewCell: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeuCell(indexPath) as CategoriesCollectionViewCell
-        let data = categories[indexPath.item]
-        cell.updateCategories(data)
-        
-        return cell
-    }
-}
-
+// MARK: - CollectionViewDelegateFlowLayout
 extension CategoriesTableViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -118,9 +104,9 @@ extension CategoriesTableViewCell: UICollectionViewDelegateFlowLayout {
     }
     
     //     Отступы между элементами в строке (по горизонтали)
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 6
-//    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    //        return 6
+    //    }
     
     // Отступы от края коллекции
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -128,7 +114,24 @@ extension CategoriesTableViewCell: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
+//MARK: - Layout
+extension CategoriesTableViewCell {
+    
+    private func setupViews() {
+        contentView.addSubview(collectionView)
+    }
+    
+    func setupConstraints() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            collectionView.heightAnchor.constraint(equalToConstant: 125)
+        ])
+    }
+}
 
 
 
