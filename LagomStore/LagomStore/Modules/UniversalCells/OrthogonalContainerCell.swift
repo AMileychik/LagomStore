@@ -93,10 +93,11 @@ class OrthogonalContainerCell: UITableViewCell {
 
 //MARK: - Public
 extension OrthogonalContainerCell {
-    func update(dataType: CellDataType, height: CGFloat) {
+  
+    func update(dataType: CellDataType, sectionHeight: CGFloat) {
         self.dataType = dataType
         if let heightConstraint = collectionView.constraints.first(where: { $0.firstAttribute == .height }) {
-            heightConstraint.constant = height
+            heightConstraint.constant = sectionHeight
             heightConstraint.priority = .defaultHigh
         }
         collectionView.reloadData()
@@ -115,7 +116,7 @@ extension OrthogonalContainerCell {
     }
 }
 
-// MARK: - UICollectionViewDataSource
+// MARK: - CollectionViewDataSource
 extension OrthogonalContainerCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let dataType = dataType else { return 0 }
@@ -157,7 +158,7 @@ extension OrthogonalContainerCell: UICollectionViewDataSource {
     }
 }
 
-// MARK: - UICollectionViewDelegate
+// MARK: - CollectionViewDelegate
 extension OrthogonalContainerCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let dataType = dataType else { return }
@@ -180,7 +181,7 @@ extension OrthogonalContainerCell: UICollectionViewDelegate {
     }
 }
 
-// MARK: - UICollectionViewDelegateFlowLayout
+// MARK: - CollectionViewDelegateFlowLayout
 extension OrthogonalContainerCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return dataType?.itemSize ?? .zero

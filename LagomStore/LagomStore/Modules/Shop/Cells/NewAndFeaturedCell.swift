@@ -8,19 +8,15 @@
 import UIKit
 
 class NewAndFeaturedCell: UITableViewCell {
-    
-//    var rowHeights: [CGFloat] = []
-   
+       
     private var newAndFeaturedData: [TopPickModel] = []
-    private var collectionViewHeightConstraint: NSLayoutConstraint?
 
     private lazy var titleLabel = Label(type: .name)
     private let descriptionLabel = Label(type: .description)
-    private let labelStackView = StackView(type: .productCell)
+    private let labelStackView = StackView(type: .headerStackView)
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-//        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.scrollDirection = .horizontal
        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -48,34 +44,30 @@ class NewAndFeaturedCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configureHeader(with header: TitleHeaderModel?) {
-        titleLabel.text = header?.title
-//        subtitleLabel.text = header?.subtitleLabel
-//        actionButton.setTitle(header?.buttonTitle, for: .normal)
-//        headerStackView.isHidden = header == nil
-    }
-    
-    func updateNewAndFeaturedSection(_ model: [TopPickModel], heights: CGFloat) {
-        newAndFeaturedData = model
-//        rowHeights = heights
-        updateCollectionViewHeight(heights)
-        collectionView.reloadData()
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         newAndFeaturedData.removeAll()
-//        rowHeights.removeAll()
-        updateCollectionViewHeight(0)
-    }
-    
-    func updateCollectionViewHeight(_ height: CGFloat) {
-        collectionViewHeightConstraint?.constant = height
     }
 }
 
-extension NewAndFeaturedCell: UICollectionViewDelegate {}
+//MARK: - Public
+extension NewAndFeaturedCell {
+    
+    func update(_ header: TitleHeaderModel?) {
+        titleLabel.text = header?.title
+    }
+    
+    func update(_ model: [TopPickModel], sectionHeight: CGFloat) {
+        newAndFeaturedData = model
+        if let heightConstraint = collectionView.constraints.first(where: { $0.firstAttribute == .height }) {
+            heightConstraint.constant = sectionHeight
+            heightConstraint.priority = .defaultHigh
+        }
+        collectionView.reloadData()
+    }
+}
 
+//MARK: - CollectionDataSource
 extension NewAndFeaturedCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return newAndFeaturedData.count
@@ -87,13 +79,9 @@ extension NewAndFeaturedCell: UICollectionViewDataSource {
         cell.updateNewAndFeaturedSection(data)
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return rowHeights[indexPath.row]
-//    }
 }
 
-
+//MARK: - CollectionDelegateFlowLayout
 extension NewAndFeaturedCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return CGSize(width: 150, height: 225)
@@ -108,6 +96,8 @@ extension NewAndFeaturedCell: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: - CollectionDelegate
+extension NewAndFeaturedCell: UICollectionViewDelegate {}
 
 // MARK: - Layout
 extension NewAndFeaturedCell {
@@ -119,19 +109,17 @@ extension NewAndFeaturedCell {
     }
     
     func setupConstraints() {
-        collectionViewHeightConstraint = collectionView.heightAnchor.constraint(equalToConstant: 0)
-        collectionViewHeightConstraint?.isActive = true
-        
-        labelStackView.translatesAutoresizingMaskIntoConstraints = false
-        
+                
         NSLayoutConstraint.activate([
             labelStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             labelStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             
+            collectionView.heightAnchor.constraint(equalToConstant: 0),
+            
             collectionView.topAnchor.constraint(equalTo: labelStackView.bottomAnchor, constant: 0),
             collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 }

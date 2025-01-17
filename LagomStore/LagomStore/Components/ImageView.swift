@@ -28,6 +28,7 @@ enum ImageViewType {
     case recentlyViewed
     case nearbySection
     case alwaysPopular
+    case pageControl
 }
 
 class ImageView: UIImageView {
@@ -43,13 +44,15 @@ class ImageView: UIImageView {
         switch type {
             
         case .product:
+            translatesAutoresizingMaskIntoConstraints = false
             contentMode = .scaleAspectFill
             clipsToBounds = true
             layer.cornerRadius = 6
             heightAnchor.constraint(equalToConstant: 175).isActive = true
-            widthAnchor.constraint(equalToConstant: 150).isActive = true
+//            widthAnchor.constraint(equalToConstant: 200).isActive = true
             
         case .simple:
+            translatesAutoresizingMaskIntoConstraints = false
             contentMode = .scaleAspectFill
             clipsToBounds = true
             
@@ -68,14 +71,17 @@ class ImageView: UIImageView {
         case .thankYou:
             contentMode = .scaleAspectFill
             clipsToBounds = true
+            alpha = 0.9
             
         case .newAndFeatured:
+            translatesAutoresizingMaskIntoConstraints = false
             contentMode = .scaleAspectFill
             clipsToBounds = true
             heightAnchor.constraint(equalToConstant: 200).isActive = true
             widthAnchor.constraint(equalToConstant: 150).isActive = true
             
         case .recentlyViewed:
+            translatesAutoresizingMaskIntoConstraints = false
             contentMode = .scaleAspectFill
             clipsToBounds = true
             heightAnchor.constraint(equalToConstant: 150).isActive = true
@@ -86,6 +92,7 @@ class ImageView: UIImageView {
             clipsToBounds = true
             heightAnchor.constraint(equalToConstant: 275).isActive = true
             widthAnchor.constraint(equalToConstant: 275).isActive = true
+            translatesAutoresizingMaskIntoConstraints = false
             
         case .alwaysPopular:
             contentMode = .scaleAspectFill
@@ -93,6 +100,11 @@ class ImageView: UIImageView {
             layer.cornerRadius = 10
             isUserInteractionEnabled = true
             translatesAutoresizingMaskIntoConstraints = false
+        case .pageControl:
+            contentMode = .scaleAspectFill
+            clipsToBounds = true
+//            heightAnchor.constraint(equalToConstant: 100).isActive = true
+            widthAnchor.constraint(equalToConstant: 125).isActive = true
         }
     }
     

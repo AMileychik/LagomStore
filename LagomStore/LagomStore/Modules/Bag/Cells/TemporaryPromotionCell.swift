@@ -21,7 +21,10 @@ class TemporaryPromotionCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+//MARK: - Public
+extension TemporaryPromotionCell {
     func update(_ model: PromotionModel) {
         label.text = model.label
     }
@@ -36,15 +39,14 @@ extension TemporaryPromotionCell {
         containerView.backgroundColor = .lightGray
         containerView.layer.cornerRadius = 8
         containerView.layer.masksToBounds = true
-        
     }
     
     private func setupConstraints() {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
-    
+            
             containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),

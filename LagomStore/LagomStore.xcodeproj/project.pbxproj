@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B45B234F2D387C8300F89A84 /* PageControlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45B234E2D387C8300F89A84 /* PageControlTest.swift */; };
+		B45B235E2D3A100500F89A84 /* Get Comfortable with Winning feat. A'ja Wilson, Chloe Kelly and Vashti Cunningham .mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B45B235D2D3A100500F89A84 /* Get Comfortable with Winning feat. A'ja Wilson, Chloe Kelly and Vashti Cunningham .mp4 */; };
 		B4691B5F2CD2E15F00B43E5E /* ShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4691B5E2CD2E15F00B43E5E /* ShopVC.swift */; };
 		B4691B612CD2E1A100B43E5E /* ShopTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4691B602CD2E1A100B43E5E /* ShopTableView.swift */; };
 		B4691B632CD2EBED00B43E5E /* ButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4691B622CD2EBED00B43E5E /* ButtonsCell.swift */; };
@@ -20,6 +22,13 @@
 		B47A12432D1B378F007C5DF7 /* AlwaysPopularCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A12422D1B378F007C5DF7 /* AlwaysPopularCellTest.swift */; };
 		B47A12452D1B759E007C5DF7 /* VideoCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A12442D1B759E007C5DF7 /* VideoCellTest.swift */; };
 		B47A12472D1B7D3A007C5DF7 /* ShopVC+ShopTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A12462D1B7D3A007C5DF7 /* ShopVC+ShopTableViewTests.swift */; };
+		B47A12492D1F6D6D007C5DF7 /* NewAndFeaturedCell_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A12482D1F6D6D007C5DF7 /* NewAndFeaturedCell_Test.swift */; };
+		B47A124B2D273233007C5DF7 /* FavoriteVC + FavoritesTableView + Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A124A2D273233007C5DF7 /* FavoriteVC + FavoritesTableView + Test.swift */; };
+		B47A124D2D273520007C5DF7 /* FavoriteVCTableViewCell + CVCell + Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A124C2D273520007C5DF7 /* FavoriteVCTableViewCell + CVCell + Test.swift */; };
+		B47A124F2D2C5193007C5DF7 /* AllBagScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A124E2D2C5193007C5DF7 /* AllBagScreenTests.swift */; };
+		B47A12512D2C711C007C5DF7 /* AllDetailVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A12502D2C711C007C5DF7 /* AllDetailVCTests.swift */; };
+		B47A12532D358B0E007C5DF7 /* TopPicksContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A12522D358B0E007C5DF7 /* TopPicksContainerCell.swift */; };
+		B47A12552D3596F4007C5DF7 /* TopPicksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A12542D3596F4007C5DF7 /* TopPicksCollectionCell.swift */; };
 		B488944F2CEEA0E3008B8009 /* UniversalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B488944E2CEEA0E3008B8009 /* UniversalCollectionViewCell.swift */; };
 		B48894512CF18E53008B8009 /* NearbyStoresCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48894502CF18E52008B8009 /* NearbyStoresCollectionViewCell.swift */; };
 		B48894532CF19D3E008B8009 /* NearbyStoresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48894522CF19D3E008B8009 /* NearbyStoresCell.swift */; };
@@ -91,13 +100,15 @@
 		B4DB604E2CC971F700D54B54 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB604D2CC971F700D54B54 /* Layout.swift */; };
 		B4DB60582CCF33B100D54B54 /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB60572CCF33B100D54B54 /* EventsVC.swift */; };
 		B4DB605B2CCFFCC500D54B54 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DB605A2CCFFCC500D54B54 /* DetailVC.swift */; };
+		B4F3AC8F2D371B8300B3C73B /* UIColor + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F3AC8E2D371B8300B3C73B /* UIColor + Extention.swift */; };
 		B4FDB6A92CD00B99002BFDA7 /* DetailTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDB6A82CD00B99002BFDA7 /* DetailTableView.swift */; };
 		B4FDB6AF2CD1A023002BFDA7 /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDB6AE2CD1A023002BFDA7 /* HomeTableView.swift */; };
-		B4FDB6B12CD1A741002BFDA7 /* 12335026-uhd_2560_1440_48fps.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B4FDB6B02CD1A737002BFDA7 /* 12335026-uhd_2560_1440_48fps.mp4 */; };
 		B4FDB6B32CD1B2FF002BFDA7 /* ShopCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDB6B22CD1B2FF002BFDA7 /* ShopCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B45B234E2D387C8300F89A84 /* PageControlTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlTest.swift; sourceTree = "<group>"; };
+		B45B235D2D3A100500F89A84 /* Get Comfortable with Winning feat. A'ja Wilson, Chloe Kelly and Vashti Cunningham .mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Get Comfortable with Winning feat. A'ja Wilson, Chloe Kelly and Vashti Cunningham .mp4"; path = "Nike/Get Comfortable with Winning feat. A'ja Wilson, Chloe Kelly and Vashti Cunningham .mp4"; sourceTree = SOURCE_ROOT; };
 		B4691B5E2CD2E15F00B43E5E /* ShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVC.swift; sourceTree = "<group>"; };
 		B4691B602CD2E1A100B43E5E /* ShopTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableView.swift; sourceTree = "<group>"; };
 		B4691B622CD2EBED00B43E5E /* ButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsCell.swift; sourceTree = "<group>"; };
@@ -111,6 +122,13 @@
 		B47A12422D1B378F007C5DF7 /* AlwaysPopularCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysPopularCellTest.swift; sourceTree = "<group>"; };
 		B47A12442D1B759E007C5DF7 /* VideoCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCellTest.swift; sourceTree = "<group>"; };
 		B47A12462D1B7D3A007C5DF7 /* ShopVC+ShopTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopVC+ShopTableViewTests.swift"; sourceTree = "<group>"; };
+		B47A12482D1F6D6D007C5DF7 /* NewAndFeaturedCell_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAndFeaturedCell_Test.swift; sourceTree = "<group>"; };
+		B47A124A2D273233007C5DF7 /* FavoriteVC + FavoritesTableView + Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteVC + FavoritesTableView + Test.swift"; sourceTree = "<group>"; };
+		B47A124C2D273520007C5DF7 /* FavoriteVCTableViewCell + CVCell + Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteVCTableViewCell + CVCell + Test.swift"; sourceTree = "<group>"; };
+		B47A124E2D2C5193007C5DF7 /* AllBagScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBagScreenTests.swift; sourceTree = "<group>"; };
+		B47A12502D2C711C007C5DF7 /* AllDetailVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDetailVCTests.swift; sourceTree = "<group>"; };
+		B47A12522D358B0E007C5DF7 /* TopPicksContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPicksContainerCell.swift; sourceTree = "<group>"; };
+		B47A12542D3596F4007C5DF7 /* TopPicksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPicksCollectionCell.swift; sourceTree = "<group>"; };
 		B488944E2CEEA0E3008B8009 /* UniversalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalCollectionViewCell.swift; sourceTree = "<group>"; };
 		B48894502CF18E52008B8009 /* NearbyStoresCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresCollectionViewCell.swift; sourceTree = "<group>"; };
 		B48894522CF19D3E008B8009 /* NearbyStoresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStoresCell.swift; sourceTree = "<group>"; };
@@ -184,9 +202,9 @@
 		B4DB604D2CC971F700D54B54 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		B4DB60572CCF33B100D54B54 /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
 		B4DB605A2CCFFCC500D54B54 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		B4F3AC8E2D371B8300B3C73B /* UIColor + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extention.swift"; sourceTree = "<group>"; };
 		B4FDB6A82CD00B99002BFDA7 /* DetailTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableView.swift; sourceTree = "<group>"; };
 		B4FDB6AE2CD1A023002BFDA7 /* HomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
-		B4FDB6B02CD1A737002BFDA7 /* 12335026-uhd_2560_1440_48fps.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "12335026-uhd_2560_1440_48fps.mp4"; sourceTree = "<group>"; };
 		B4FDB6B22CD1B2FF002BFDA7 /* ShopCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,7 +225,7 @@
 				B4DA56202CB5DC9700B07DA0 /* Models.swift */,
 				B48894642CFE2D23008B8009 /* HeadersModels.swift */,
 				B4DB14762CE9910E0001E6FD /* Test.json */,
-				B4FDB6B02CD1A737002BFDA7 /* 12335026-uhd_2560_1440_48fps.mp4 */,
+				B45B235D2D3A100500F89A84 /* Get Comfortable with Winning feat. A'ja Wilson, Chloe Kelly and Vashti Cunningham .mp4 */,
 			);
 			path = "Models + Data";
 			sourceTree = "<group>";
@@ -217,8 +235,6 @@
 			children = (
 				B48894752D0CD4F6008B8009 /* BagVC.swift */,
 				B48894772D0CD60E008B8009 /* BagTableView.swift */,
-				B49513FC2D15065700184B91 /* TVPlusCVCell.swift */,
-				B47A12362D15C670007C5DF7 /* TestsCollectionViewCell.swift */,
 				B488947B2D1204AC008B8009 /* Cells */,
 			);
 			path = Bag;
@@ -229,6 +245,8 @@
 			children = (
 				B49513FA2D14DA5300184B91 /* TemporaryPromotionCell.swift */,
 				B488947C2D1204F2008B8009 /* OrdersCell.swift */,
+				B49513FC2D15065700184B91 /* TVPlusCVCell.swift */,
+				B47A12362D15C670007C5DF7 /* TestsCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -237,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				B4691B622CD2EBED00B43E5E /* ButtonsCell.swift */,
-				B488945A2CF7B76F008B8009 /* ShopListCell.swift */,
 				B488945C2CF7D9E5008B8009 /* NewAndFeaturedCell.swift */,
 				B488945E2CF7DA82008B8009 /* NewAndFeaturedCellCollectionViewCell.swift */,
 				B48894582CF6993A008B8009 /* RecentlyViewedCell.swift */,
@@ -331,6 +348,9 @@
 			isa = PBXGroup;
 			children = (
 				B4A9E9C62CA738B400BE7966 /* WelcomeCell.swift */,
+				B47A12522D358B0E007C5DF7 /* TopPicksContainerCell.swift */,
+				B47A12542D3596F4007C5DF7 /* TopPicksCollectionCell.swift */,
+				B4DA56152CB39E0A00B07DA0 /* PageControlCell.swift */,
 				B4DA562B2CB72F0F00B07DA0 /* PageControlCollectionViewCell.swift */,
 				B4DA56172CB58C7C00B07DA0 /* HomeListCell.swift */,
 				B4DA561C2CB58D9200B07DA0 /* VideoCell.swift */,
@@ -350,6 +370,7 @@
 				B4DB603C2CC874C800D54B54 /* UICollectionView + Extension.swift */,
 				B4DB60492CC9714000D54B54 /* UITableViewCell + reusable.swift */,
 				B4DB604B2CC971AF00D54B54 /* UITableViewCell + dequeueCell.swift */,
+				B4F3AC8E2D371B8300B3C73B /* UIColor + Extention.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -376,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				B4DB60282CC5E37900D54B54 /* MenChildVC.swift */,
+				B488945A2CF7B76F008B8009 /* ShopListCell.swift */,
 				B4DB602E2CC5ED0B00D54B54 /* ButtonCell.swift */,
 				B4DB60262CC5E34800D54B54 /* ContainerCell.swift */,
 				B4FDB6B22CD1B2FF002BFDA7 /* ShopCollectionView.swift */,
@@ -393,6 +415,12 @@
 				B47A12422D1B378F007C5DF7 /* AlwaysPopularCellTest.swift */,
 				B47A12442D1B759E007C5DF7 /* VideoCellTest.swift */,
 				B47A12462D1B7D3A007C5DF7 /* ShopVC+ShopTableViewTests.swift */,
+				B47A12482D1F6D6D007C5DF7 /* NewAndFeaturedCell_Test.swift */,
+				B47A124A2D273233007C5DF7 /* FavoriteVC + FavoritesTableView + Test.swift */,
+				B47A124C2D273520007C5DF7 /* FavoriteVCTableViewCell + CVCell + Test.swift */,
+				B47A124E2D2C5193007C5DF7 /* AllBagScreenTests.swift */,
+				B47A12502D2C711C007C5DF7 /* AllDetailVCTests.swift */,
+				B45B234E2D387C8300F89A84 /* PageControlTest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -420,7 +448,6 @@
 			children = (
 				B4A9E9D02CAB0CCA00BE7966 /* OrthogonalContainerCell.swift */,
 				B488944E2CEEA0E3008B8009 /* UniversalCollectionViewCell.swift */,
-				B4DA56152CB39E0A00B07DA0 /* PageControlCell.swift */,
 				B4DA562D2CB73FA500B07DA0 /* NestedCell.swift */,
 			);
 			path = UniversalCells;
@@ -443,8 +470,8 @@
 				B4691B682CD87E8A00B43E5E /* CategoriesTableViewCell.swift */,
 				B4DB145D2CE6B64E0001E6FD /* CategoriesCollectionViewCell.swift */,
 				B4DB14492CE410F20001E6FD /* DetailButtons.swift */,
-				B4DB14782CEAAA770001E6FD /* ExpandableCell.swift */,
 				B48894792D0E859A008B8009 /* ProductDescription.swift */,
+				B4DB14782CEAAA770001E6FD /* ExpandableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -556,8 +583,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4A9E9B82CA7332000BE7966 /* Assets.xcassets in Resources */,
+				B45B235E2D3A100500F89A84 /* Get Comfortable with Winning feat. A'ja Wilson, Chloe Kelly and Vashti Cunningham .mp4 in Resources */,
 				B4A9E9BB2CA7332000BE7966 /* Base in Resources */,
-				B4FDB6B12CD1A741002BFDA7 /* 12335026-uhd_2560_1440_48fps.mp4 in Resources */,
 				B4DB14772CE9910E0001E6FD /* Test.json in Resources */,
 				B4A9E9B62CA7331D00BE7966 /* Base in Resources */,
 			);
@@ -572,6 +599,7 @@
 			files = (
 				B4DA561B2CB58CC600B07DA0 /* GradientView.swift in Sources */,
 				B4DB14602CE6C05E0001E6FD /* Notes.swift in Sources */,
+				B45B234F2D387C8300F89A84 /* PageControlTest.swift in Sources */,
 				B4DB60272CC5E34800D54B54 /* ContainerCell.swift in Sources */,
 				B47A12452D1B759E007C5DF7 /* VideoCellTest.swift in Sources */,
 				B4DA562C2CB72F0F00B07DA0 /* PageControlCollectionViewCell.swift in Sources */,
@@ -611,6 +639,7 @@
 				B4DB602B2CC5E38800D54B54 /* SecondChildViewController.swift in Sources */,
 				B4DA560B2CAF1BB200B07DA0 /* Loader.swift in Sources */,
 				B4DB144F2CE5642F0001E6FD /* FavoritesTableView.swift in Sources */,
+				B47A12512D2C711C007C5DF7 /* AllDetailVCTests.swift in Sources */,
 				B4A9E9D12CAB0CCA00BE7966 /* OrthogonalContainerCell.swift in Sources */,
 				B47A12472D1B7D3A007C5DF7 /* ShopVC+ShopTableViewTests.swift in Sources */,
 				B4DB603D2CC874C800D54B54 /* UICollectionView + Extension.swift in Sources */,
@@ -623,13 +652,18 @@
 				B48E2C402CC03A5F00D35BE7 /* TableViewCell + Extention.swift in Sources */,
 				B4691B5F2CD2E15F00B43E5E /* ShopVC.swift in Sources */,
 				B47A12432D1B378F007C5DF7 /* AlwaysPopularCellTest.swift in Sources */,
+				B47A12552D3596F4007C5DF7 /* TopPicksCollectionCell.swift in Sources */,
 				B4A9E9B12CA7331D00BE7966 /* SceneDelegate.swift in Sources */,
 				B488945D2CF7D9E5008B8009 /* NewAndFeaturedCell.swift in Sources */,
+				B47A124D2D273520007C5DF7 /* FavoriteVCTableViewCell + CVCell + Test.swift in Sources */,
 				B49513FD2D15065700184B91 /* TVPlusCVCell.swift in Sources */,
+				B4F3AC8F2D371B8300B3C73B /* UIColor + Extention.swift in Sources */,
 				B4DB602D2CC5E39700D54B54 /* ThirdChildViewController.swift in Sources */,
+				B47A124B2D273233007C5DF7 /* FavoriteVC + FavoritesTableView + Test.swift in Sources */,
 				B4DA56252CB6CD9E00B07DA0 /* AlwaysPopularCell.swift in Sources */,
 				B4DB60462CC970A600D54B54 /* ImageView.swift in Sources */,
 				B47A12372D15C670007C5DF7 /* TestsCollectionViewCell.swift in Sources */,
+				B47A124F2D2C5193007C5DF7 /* AllBagScreenTests.swift in Sources */,
 				B4FDB6AF2CD1A023002BFDA7 /* HomeTableView.swift in Sources */,
 				B47A123D2D1B0BF8007C5DF7 /* HomeVCTests.swift in Sources */,
 				B4DB14562CE57E460001E6FD /* FavoriteVCTableViewCell.swift in Sources */,
@@ -639,6 +673,7 @@
 				B488944F2CEEA0E3008B8009 /* UniversalCollectionViewCell.swift in Sources */,
 				B49513FB2D14DA5300184B91 /* TemporaryPromotionCell.swift in Sources */,
 				B4DA56212CB5DC9700B07DA0 /* Models.swift in Sources */,
+				B47A12532D358B0E007C5DF7 /* TopPicksContainerCell.swift in Sources */,
 				B4DA56182CB58C7C00B07DA0 /* HomeListCell.swift in Sources */,
 				B4DA56162CB39E0A00B07DA0 /* PageControlCell.swift in Sources */,
 				B4FDB6B32CD1B2FF002BFDA7 /* ShopCollectionView.swift in Sources */,
@@ -650,6 +685,7 @@
 				B47A12412D1B14BB007C5DF7 /* HomeListCellTests.swift in Sources */,
 				B4DB60442CC9705300D54B54 /* Label.swift in Sources */,
 				B4A9E9CE2CAB0AF600BE7966 /* TestCollectionViewCell.swift in Sources */,
+				B47A12492D1F6D6D007C5DF7 /* NewAndFeaturedCell_Test.swift in Sources */,
 				B4DB14792CEAAA770001E6FD /* ExpandableCell.swift in Sources */,
 				B48894732D0C848C008B8009 /* OrdersService.swift in Sources */,
 				B488946B2D012EFA008B8009 /* MainVC.swift in Sources */,

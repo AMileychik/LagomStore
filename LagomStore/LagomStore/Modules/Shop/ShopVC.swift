@@ -9,11 +9,11 @@ import UIKit
 
 class ShopVC: UIViewController {
     
-    private let loader: IProductsLoader
-    private lazy var tableView = ShopTableView(loader: loader)
+    private let shopLoader: IProductsLoader
+    private lazy var tableView = ShopTableView(shopLoader: shopLoader)
     
-    init(loader: IProductsLoader) {
-        self.loader = loader
+    init(shopLoader: IProductsLoader) {
+        self.shopLoader = shopLoader
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,10 +38,6 @@ extension ShopVC {
         tableView.shopDataModels = [
             .buttons(products.shopButtons),
             .thisWeekTopStories(model: products.topPicks, header: products.headers.titleHeaderModel),
-//            .list(rows: [
-//                    .nested(ThankYouModel(image: "ThankYou")),
-//                    .nested(ThankYouModel(image: "ThankYou"))
-//                ]),
             .list(products.thankYou),
             .newAndFeatured(model: products.topPicks, header: products.headers.titleHeaderModel),
             .recentlyViewed(model: products.topPicks, header: products.headers.titleHeaderModel),
@@ -49,11 +45,13 @@ extension ShopVC {
             .recommendedForYou(model: products.topPicks, header: products.headers.titleHeaderModel),
             .nearbyStore(model: products.thankYou, header: products.headers.titleHeaderModel)
         ]
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func loadProducts() {
-        loader.loadProducts { [weak self] result in
+        shopLoader.loadProducts { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let products):

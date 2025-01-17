@@ -32,17 +32,20 @@ class StackView: UIStackView {
             directionalLayoutMargins = NSDirectionalEdgeInsets(top: 6, leading: 0, bottom: 0, trailing: 0)
             isLayoutMarginsRelativeArrangement = true
             backgroundColor = .systemBackground
+            translatesAutoresizingMaskIntoConstraints = false
             
         case .headerStackView:
             translatesAutoresizingMaskIntoConstraints = false
             axis = .vertical
             alignment = .leading
-            spacing = 4
-            
+            spacing = 0
+            distribution = .fillEqually
+
         case .newAndFeatured:
             axis = .vertical
             alignment = .leading
             spacing = 4
+            translatesAutoresizingMaskIntoConstraints = false
             
         case .listHeader:
             translatesAutoresizingMaskIntoConstraints = false

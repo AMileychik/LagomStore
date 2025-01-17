@@ -9,12 +9,12 @@ import UIKit
 
 class ShopTableView: UITableView {
     
-    private let loader: IProductsLoader
+    private let shopLoader: IProductsLoader
     var shopDataModels: [ShopVCSections] = []
     private var selectedButtonIndex: Int = 0
     
-    init(loader: IProductsLoader) {
-        self.loader = loader
+    init(shopLoader: IProductsLoader) {
+        self.shopLoader = shopLoader
         super.init(frame: .zero, style: .plain)
         commonInit()
     }
@@ -55,9 +55,6 @@ extension ShopTableView {
             shopDataModels = [
                 .buttons(products.shopButtons),
                 .thisWeekTopStories(model: products.topPicks, header: products.headers.titleHeaderModel),
-//                .list(rows: [
-//                        .nested(ThankYouModel(image: "ThankYou")),
-//                    ]),
                 .list(products.thankYou),
                 .newAndFeatured(model: products.topPicks, header: products.headers.titleHeaderModel),
                 .recentlyViewed(model: products.topPicks, header: products.headers.titleHeaderModel),
@@ -73,7 +70,7 @@ extension ShopTableView {
                 .newAndFeatured(model: products.topPicks, header: products.headers.titleHeaderModel),
                 .recentlyViewed(model: products.topPicks, header: products.headers.titleHeaderModel),
                 .classicsSpotlight(model: products.topPicks, header: products.headers.titleHeaderModel),
-//                .list(products.thankYou),
+                .list(products.thankYou),
                 .recommendedForYou(model: products.topPicks, header: products.headers.titleHeaderModel),
                 .nearbyStore(model: products.thankYou, header: products.headers.titleHeaderModel)
             ]
@@ -81,7 +78,7 @@ extension ShopTableView {
         case .kids:
             shopDataModels = [
                 .buttons(products.shopButtons),
-//                .list(products.thankYou),
+                .list(products.thankYou),
                 .newAndFeatured(model: products.topPicks, header: products.headers.titleHeaderModel),
                 .classicsSpotlight(model: products.topPicks, header: products.headers.titleHeaderModel),
                 .recommendedForYou(model: products.topPicks, header: products.headers.titleHeaderModel),
@@ -92,7 +89,7 @@ extension ShopTableView {
     }
     
     func loadProducts(for buttonDataType: ButtonDataType) {
-        loader.loadProducts { [weak self] result in
+        shopLoader.loadProducts { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let products):
@@ -104,10 +101,10 @@ extension ShopTableView {
     }
     
     func removeSection(at index: Int) {
-        //        guard index >= 0 && index < shopDataModels.count else {
-        //            print("Invalid section index: \(index)")
-        //            return
-        //        }
+        guard index >= 0 && index < shopDataModels.count else {
+            print("Invalid section index: \(index)")
+            return
+        }
         shopDataModels.remove(at: index)
         beginUpdates()
         deleteSections(IndexSet(integer: index), with: .bottom)
@@ -159,16 +156,6 @@ extension ShopTableView: UITableViewDataSource {
         case recommendedForYou(model: [TopPickModel], header: TitleHeaderModel)
         case nearbyStore(model: [ThankYouModel], header: TitleHeaderModel)
     }
-        
-//        case buttons(ShopButtonsModel)
-//        case thisWeekTopStories(model: [TopPickModel], header: TitleHeaderModel)
-//        case list(rows: [ListRow])
-//        case newAndFeatured(model: [TopPickModel], header: TitleHeaderModel)
-//        case recentlyViewed(model: [TopPickModel], header: TitleHeaderModel)
-//        case classicsSpotlight(model: [TopPickModel], header: TitleHeaderModel)
-//        case recommendedForYou(model: [TopPickModel], header: TitleHeaderModel)
-//        case nearbyStore(model: [ThankYouModel], header: TitleHeaderModel)
-//    }
     
     enum ListRow{
         case nested(ThankYouModel)
@@ -179,7 +166,6 @@ extension ShopTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
         let sectionData = shopDataModels[section]
             switch sectionData {
             case .list(let rows):
@@ -201,29 +187,11 @@ extension ShopTableView: UITableViewDataSource {
             
         case .thisWeekTopStories(let model, let header):
             let cell = tableView.dequeuCell(indexPath) as OrthogonalContainerCell
-            cell.update(dataType: .thisWeekTopStories(model), height: 350)
             cell.updateHeader(header)
+            cell.update(dataType: .thisWeekTopStories(model), sectionHeight: 350)
             return cell
-            
-//        case .list(let model):
-//            let cell = tableView.dequeuCell(indexPath) as ShopListCell
-//            cell.configure(model, heights: [110, 110, 110, 110])
-//            return cell
-            
+              
         case .list(let rows):
-//            let row = rows[indexPath.row]
-//            switch row {
-//            case .nested(let model):
-//                let cell = tableView.dequeuCell(indexPath) as NestedCell
-//                cell.updateShopListCell(with: model)
-//                return cell
-//            }
-            
-//            let cell = tableView.dequeuCell(indexPath) as NestedCell
-//            let model = rows[indexPath.row]
-//            cell.updateShopListCell(with: rows)
-//            return cell
-            
             let cell = tableView.dequeuCell(indexPath) as NestedCell
             let model = rows[indexPath.row]
             cell.updateShopListCell(with: model)
@@ -231,16 +199,14 @@ extension ShopTableView: UITableViewDataSource {
             
         case .newAndFeatured(let model, let header):
             let cell = tableView.dequeuCell(indexPath) as NewAndFeaturedCell
-            cell.updateNewAndFeaturedSection(model, heights: 30)
-            cell.configureHeader(with: header)
-            cell.updateCollectionViewHeight(275)
+            cell.update(header)
+            cell.update(model, sectionHeight: 300)
             return cell
             
         case .recentlyViewed(let model, let header):
             let cell = tableView.dequeuCell(indexPath) as RecentlyViewedCell
-            cell.updateRecentlyViewed(model)
-            cell.configureHeader(with: header)
-            cell.updateCollectionViewHeight(250)
+            cell.update(header)
+            cell.update(model, sectionHeight: 270)
             
             if case .recentlyViewed = sections {
                 cell.onRemoveSection = { [weak self] in
@@ -252,56 +218,31 @@ extension ShopTableView: UITableViewDataSource {
             
         case .classicsSpotlight(let model, let header):
             let cell = tableView.dequeuCell(indexPath) as NewAndFeaturedCell
-            cell.updateNewAndFeaturedSection(model, heights: 175)
-            cell.configureHeader(with: header)
-            cell.updateCollectionViewHeight(275)
+            cell.update(header)
+            cell.update(model, sectionHeight: 295)
             return cell
             
         case .recommendedForYou(let model, let header):
             let cell = tableView.dequeuCell(indexPath) as RecentlyViewedCell
-            cell.updateRecentlyViewed(model)
-            cell.configureRecommendedForYouHeader(with: header)
-            cell.updateCollectionViewHeight(250)
+            cell.update(header)
+            cell.update(model, sectionHeight: 290)
             return cell
             
         case .nearbyStore(let model, let header):
             let cell = tableView.dequeuCell(indexPath) as NearbyStoresCell
-            cell.updateSection(.nearbyStoreSectionData(models: model))
-            cell.configureHeader(with: header)
-            cell.updateCollectionViewHeight(250)
+            cell.update(header)
+            cell.update(.nearbyStoreSectionData(models: model), sectionHeight: 300)
             return cell
         }
     }
 }
 
 // MARK: - UITableViewDelegate
-//extension ShopTableView: UITableViewDelegate {}
-
-//extension ShopTableView: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        
-//        
-//        let section = shopDataModels[indexPath.section]
-//        
-//        switch section {
-//        case .list(let rows):
-//            let row = rows[indexPath.row]
-//            switch row {
-//            case .nested:
-//                return 110// Задайте нужную высоту для `nested`
-//            }
-//        default:
-//            return UITableView.automaticDimension // Автоматическая высота для остальных секций
-//        }
-//    }
-//}
-
 extension ShopTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let section = shopDataModels[indexPath.section]
         switch section {
-//        case .list(let rows):
         case .list:
             return 110
             

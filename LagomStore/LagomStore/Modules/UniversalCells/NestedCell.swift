@@ -61,10 +61,10 @@ extension NestedCell {
         nestedCellImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            nestedCellImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
-            nestedCellImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            nestedCellImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             nestedCellImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            nestedCellImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            nestedCellImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            nestedCellImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4)
         ])
     }
 }

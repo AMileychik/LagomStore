@@ -13,13 +13,16 @@ class AlwaysPopularCell: UITableViewCell {
     private let smallImageView1   = ImageView(type: .alwaysPopular)
     private let smallImageView2   = ImageView(type: .alwaysPopular)
     
-    private let titleLabel        = Label(type: .alwaysPopular)
+    private let titleLabel        = Label(type: .alwaysPopularHeader)
+    
     private let largeImageLabel1  = Label(type: .alwaysPopular)
-    private let largeImageLabel2  = Label(type: .alwaysPopular)
+    private let largeImageLabel2  = Label(type: .alwaysPopularBolt)
+    
     private let smallImage1Label1 = Label(type: .alwaysPopular)
-    private let smallImage1Label2 = Label(type: .alwaysPopular)
+    private let smallImage1Label2 = Label(type: .alwaysPopularBolt)
+    
     private let smallImage2Label1 = Label(type: .alwaysPopular)
-    private let smallImage2Label2 = Label(type: .alwaysPopular)
+    private let smallImage2Label2 = Label(type: .alwaysPopularBolt)
     
     private lazy var rightButton: UIButton = {
         let button = UIButton(type: .system)
@@ -31,12 +34,14 @@ class AlwaysPopularCell: UITableViewCell {
     
     private lazy var bottomButton: UIButton = {
         let button = UIButton()
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .white
+        button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleBottomButtonTap), for: .touchUpInside)
         button.clipsToBounds = true
-        button.layer.cornerRadius = 16
+        button.layer.cornerRadius = 24
+        button.layer.borderColor = UIColor.gray.cgColor
+        button.layer.borderWidth = 1.0
+        button.backgroundColor = UIColor.black.adjustBrightness(by: 0.1)
         return button
     }()
     
@@ -69,7 +74,9 @@ class AlwaysPopularCell: UITableViewCell {
 
 //MARK: - Public
 extension AlwaysPopularCell {
+    
     func update(_ model: AlwaysPopularModel) {
+        
         titleLabel.text = model.title
         rightButton.setTitle(model.rightButtonTitle, for: .normal)
         
@@ -94,8 +101,9 @@ extension AlwaysPopularCell {
 extension AlwaysPopularCell {
     
     private func setupViews() {
-        contentView.backgroundColor = .black
         
+        contentView.backgroundColor = UIColor.black.adjustBrightness(by: 0.1)
+
         [largeImageView, smallImageView1, smallImageView2, titleLabel, rightButton, bottomButton,
          largeImageLabel1, largeImageLabel2, smallImage1Label1, smallImage1Label2, smallImage2Label1, smallImage2Label2].forEach {
             contentView.addSubview($0)
@@ -103,18 +111,19 @@ extension AlwaysPopularCell {
     }
     
     private func setupConstraints() {
+        
         NSLayoutConstraint.activate([
             // Заголовок и кнопка
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 36),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             
             rightButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
-            rightButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            rightButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             
             // Большое изображение
-            largeImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            largeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            largeImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            largeImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24),
+            largeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            largeImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             largeImageView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1.0),
             
             // Лейблы под большим изображением
@@ -122,18 +131,18 @@ extension AlwaysPopularCell {
             largeImageLabel1.leadingAnchor.constraint(equalTo: largeImageView.leadingAnchor),
             largeImageLabel1.trailingAnchor.constraint(equalTo: largeImageView.trailingAnchor),
             
-            largeImageLabel2.topAnchor.constraint(equalTo: largeImageLabel1.bottomAnchor, constant: 4),
+            largeImageLabel2.topAnchor.constraint(equalTo: largeImageLabel1.bottomAnchor, constant: 8),
             largeImageLabel2.leadingAnchor.constraint(equalTo: largeImageLabel1.leadingAnchor),
             largeImageLabel2.trailingAnchor.constraint(equalTo: largeImageView.trailingAnchor),
             
             // Маленькие изображения
             smallImageView1.topAnchor.constraint(equalTo: largeImageLabel2.bottomAnchor, constant: 16),
-            smallImageView1.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            smallImageView1.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.440),
+            smallImageView1.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            smallImageView1.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.415),
             smallImageView1.heightAnchor.constraint(equalTo: smallImageView1.widthAnchor),
             
             smallImageView2.topAnchor.constraint(equalTo: largeImageLabel2.bottomAnchor, constant: 16),
-            smallImageView2.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            smallImageView2.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             smallImageView2.widthAnchor.constraint(equalTo: smallImageView1.widthAnchor),
             smallImageView2.heightAnchor.constraint(equalTo: smallImageView1.heightAnchor),
             
@@ -142,7 +151,7 @@ extension AlwaysPopularCell {
             smallImage1Label1.leadingAnchor.constraint(equalTo: smallImageView1.leadingAnchor),
             smallImage1Label1.trailingAnchor.constraint(equalTo: smallImageView1.trailingAnchor),
             
-            smallImage1Label2.topAnchor.constraint(equalTo: smallImage1Label1.bottomAnchor, constant: 4),
+            smallImage1Label2.topAnchor.constraint(equalTo: smallImage1Label1.bottomAnchor, constant: 8),
             smallImage1Label2.leadingAnchor.constraint(equalTo: smallImage1Label1.leadingAnchor),
             smallImage1Label2.trailingAnchor.constraint(equalTo: smallImageView1.trailingAnchor),
             
@@ -150,16 +159,16 @@ extension AlwaysPopularCell {
             smallImage2Label1.leadingAnchor.constraint(equalTo: smallImageView2.leadingAnchor),
             smallImage2Label1.trailingAnchor.constraint(equalTo: smallImageView2.trailingAnchor),
             
-            smallImage2Label2.topAnchor.constraint(equalTo: smallImage2Label1.bottomAnchor, constant: 4),
+            smallImage2Label2.topAnchor.constraint(equalTo: smallImage2Label1.bottomAnchor, constant: 8),
             smallImage2Label2.leadingAnchor.constraint(equalTo: smallImage2Label1.leadingAnchor),
             smallImage2Label2.trailingAnchor.constraint(equalTo: smallImageView2.trailingAnchor),
             
             // Нижняя кнопка
             bottomButton.topAnchor.constraint(equalTo: smallImage1Label2.bottomAnchor, constant: 24),
-            bottomButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            bottomButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8),
+            bottomButton.leadingAnchor.constraint(equalTo: smallImageView1.leadingAnchor),
+            bottomButton.trailingAnchor.constraint(equalTo: smallImageView2.trailingAnchor),
             bottomButton.heightAnchor.constraint(equalToConstant: 50),
-            bottomButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24)
+            bottomButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -36)
         ])
     }
 }

@@ -16,7 +16,7 @@ class DetailVC: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -28,25 +28,18 @@ class DetailVC: UIViewController {
 
 // MARK: - Business Logic
 extension DetailVC {
-    
-
-    
     func updateWithCategory(_ topPicksModel: [TopPickModel], category: String) {
         
         guard let subCategories = topPicksModel.first?.categories?.first?.subCategories else { return }
         let categories = topPicksModel.filter { $0.categoryName == category }
         guard let buttonsTitles = topPicksModel.first?.detailButtonsName else { return }
         guard let pageControlData = topPicksModel.first?.pagecontrolModel else { return }
-//        guard let listCellData = topPicksModel.first?.listCategories else { return }
-        
         guard let youMightAlsoLikeData = topPicksModel.first?.youMightAlsoLike else { return }
-
-        
         let topPickModels = topPicksModel.filter { $0.id != 0 }
-        
         let firstTopPickModel = topPickModels.first
         
-
+//        guard let listCellData = topPicksModel.first?.listCategories else { return }
+        
         tableView.dataModels = [
             .pageControl(subCategories),
             .productOptions(categories),

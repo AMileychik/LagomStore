@@ -17,7 +17,7 @@ class VideoCell: UITableViewCell {
     private var gradientView: GradientView?
     
     // Инициализация и установка видео
-    func update(_ url: URL, addGradient: Bool) {
+    func update(_ url: URL, addGradient: Bool, isMuted: Bool) {
         // Если плеера нет, создаем его
         if player == nil {
             playerItem = AVPlayerItem(url: url)
@@ -30,6 +30,7 @@ class VideoCell: UITableViewCell {
             playerLayer.videoGravity = .resizeAspectFill
             contentView.layer.addSublayer(playerLayer)
         }
+        player?.isMuted = isMuted
         
         // Добавляем градиент, если нужно
         if addGradient, gradientView == nil {

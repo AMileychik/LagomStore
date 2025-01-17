@@ -14,8 +14,8 @@
             "buttonTitle": "View All"
         },
         "listHeader": {
-            "labelText": "ListLabel",
-            "buttonTitle": "ListButton"
+            "labelText": "Womens Training",
+            "buttonTitle": "View All"
         },
         "productCategory1Header": {
             "firstLabelText": "PCLabel",
@@ -32,47 +32,43 @@
         {
             "id": 1,
             "count": 1,
-            "image": "TrolleyType1",
-            "description": "!",
-            "type": "Trolley",
-            "price": "$100",
+            "image": "AIR+JORDAN+1+HIGH+G",
+            "description": "Air Jordan I High G",
+            "type": "Air Jordan",
+            "price": "$135",
             "categories": [
                 {
-                    "image2": "TrolleyType1",
+                    "image2": "AIR+JORDAN+1+HIGH+G",
                     "subCategories": [
                         {
-                            "image3": "TrolleyType1",
-                            "currentSubCategory": "Current"
+                            "image3": "AIR+JORDAN+1+HIGH+G",
+                            "currentSubCategory": "String mops"
                         },
                         {
-                            "image3": "TrolleyType4",
-                            "currentSubCategory": "Current"
+                            "image3": "AU-FCL-30-Supermocio-3Action-140439-6-VC-Prod-Sell-Slot",
+                            "currentSubCategory": "String mops"
                         },
                         {
-                            "image3": "TrolleyType1",
-                            "currentSubCategory": "Current"
+                            "image3": "AU-FCL-30-Supermocio-3Action-140439-4-VC-Prod-Sell-Slot",
+                            "currentSubCategory": "String mops"
                         },
                         {
-                            "image3": "TrolleyType2",
-                            "currentSubCategory": "Current"
+                            "image3": "AU-FCL-30-Supermocio-3Action-140439-7-VC-Prod-Sell-Slot",
+                            "currentSubCategory": "String mops"
                         }
                     ]
                 },
                 {
-                    "image2": "CleaningEquipmentType1",
+                    "image2": "552528-00",
                     "subCategories": [
                         {
-                            "image3": "CleaningEquipmentType1",
-                            "currentSubCategory": "NewArrival"
+                            "image3": "552528-00",
+                            "currentSubCategory": "Dispensers"
                         },
                         {
-                            "image3": "CleaningEquipmentType3",
-                            "currentSubCategory": "NewArrival"
+                            "image3": "552528-03",
+                            "currentSubCategory": "Dispensers"
                         },
-                        {
-                            "image3": "CleaningEquipmentType2",
-                            "currentSubCategory": "NewArrival"
-                        }
                     ]
                 }
             ],
@@ -129,25 +125,21 @@
         {
             "id": 2,
             "count": 1,
-            "image": "CleaningEquipmentType2",
-            "description": "Cleaning",
-            "type": "Equipment",
-            "price": "$200",
+            "image": "AIR+JORDAN+1+HIGH+G.png",
+            "description": "Air Jordan I High G",
+            "type": "Air Jordan",
+            "price": "$140",
             "categories": [
                 {
-                    "image2": "CleaningEquipmentType2",
+                    "image2": "AIR+JORDAN+1+HIGH+G.png",
                     "subCategories": [
                         {
-                            "image3": "CleaningEquipmentType2",
-                            "currentSubCategory": "NewArrival"
+                            "image3": "AIR+JORDAN+1+HIGH+G.png",
+                            "currentSubCategory": "Dispensers"
                         },
                         {
-                            "image3": "CleaningEquipmentType2",
-                            "currentSubCategory": "NewArrival"
-                        },
-                        {
-                            "image3": "CleaningEquipmentType3",
-                            "currentSubCategory": "NewArrival"
+                            "image3": "552528-03",
+                            "currentSubCategory": "Dispensers"
                         }
                     ]
                 },
@@ -217,21 +209,21 @@
         {
             "id": 3,
             "count": 1,
-            "image": "CleaningEquipmentType3",
-            "description": "Cleaning",
-            "type": "Equipment",
-            "price": "$300",
+            "image": "AIR+JORDAN+1+HIGH+G + Green",
+            "description": "Air Jordan I High G",
+            "type": "Air Jordan",
+            "price": "$145",
             "categories": [
                 {
-                    "image2": "CleaningEquipmentType3",
+                    "image2": "AIR+JORDAN+1+HIGH+G + Green",
                     "subCategories": [
                         {
-                            "image3": "CleaningEquipmentType3",
-                            "currentSubCategory": "NewCollection"
+                            "image3": "AIR+JORDAN+1+HIGH+G + Green",
+                            "currentSubCategory": "Equipment"
                         },
                         {
-                            "image3": "CleaningEquipmentType3",
-                            "currentSubCategory": "NewCollection"
+                            "image3": "d0-1",
+                            "currentSubCategory": "Equipment"
                         }
                     ]
                 },
@@ -298,14 +290,14 @@
     ],
     "pageControl": [
         {
-            "image": "CleaningEquipmentType1",
+            "image": "kobe-protro-footwear-group-featured-2",
             "title": "Get Ready to Win",
-            "description": "Use code WINNING for an extra 25% off select styles"
+            "description": "Use code WINNING for an extra 25% off select styles."
         },
         {
-            "image": "CleaningEquipmentType2",
-            "title": "Nike Experts",
-            "description": "Chat live with sports & style Experts"
+            "image": "nike-vomero",
+            "title": "Shopping As It Should Be",
+            "description": "Get free shipping on orders $50+."
         }
     ],
     "youMightAlsoLike": [
@@ -322,21 +314,18 @@
             "image": "ThankYou",
         }
     ],
-    "listHeader": {
-        "labelText": "ListLabel",
-        "buttonTitle": "ListButton"
-    },
     "listModel": [
         {
-            "image": "TrolleyType1"        },
-        {
-            "videoURL": "12335026-uhd_2560_1440_48fps"
+            "image": "sports-bra-1"
         },
         {
-            "image": "ThankYou"
+            "image": "sports-bra-3"
         },
         {
-            "image": "TrolleyType4"
+            "image": "sports-bra-2"
+        },
+        {
+            "videoURL": "Get Comfortable with Winning feat. A'ja Wilson, Chloe Kelly and Vashti Cunningham "
         }
     ],
     "productCategory1Header": {
@@ -370,18 +359,18 @@
     },
     "alwaysPopular": [
         {
-            "largeImage": "CleaningEquipmentType3",
-            "smallImage1": "CleaningEquipmentType2",
-            "smallImage2": "CleaningEquipmentType1",
-            "title": "Popular Picks",
+            "largeImage": "jordan-brand-zion-4-1",
+            "smallImage1": "jordan-brand-launches-the-air-jordan-xxxviii",
+            "smallImage2": "jordan-brand-launches-luka-2-basketball-shoe",
+            "title": "Bathroom Cleaning",
             "rightButtonTitle": "View All",
-            "bottomButtonTitle": "Shop Now",
-            "largeImageLabel1": "Air Max",
-            "largeImageLabel2": "Exclusive",
-            "smallImage1Label1": "Running Shoes",
-            "smallImage1Label2": "Fast Comfort",
-            "smallImage2Label1": "Zoom Series",
-            "smallImage2Label2": "Top Speed"
+            "bottomButtonTitle": "View All",
+            "largeImageLabel1": "Naturally clean",
+            "largeImageLabel2": "Make your shower doors shine",
+            "smallImage1Label1": "Comfort",
+            "smallImage1Label2": "Super Protector Gloves",
+            "smallImage2Label1": "Eco-Friendly",
+            "smallImage2Label2": "Tidy Top Ten"
         }
     ],
     "productCategory2Header": {
